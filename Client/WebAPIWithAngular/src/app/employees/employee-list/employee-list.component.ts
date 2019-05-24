@@ -10,7 +10,7 @@ import { Employee } from 'src/app/shared/employee.model';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(private service: EmployeeService) { }
+  constructor(private service: EmployeeService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.service.refreshList();
@@ -19,4 +19,14 @@ export class EmployeeListComponent implements OnInit {
   populateForm(emp: Employee) {
     this.service.formData = Object.assign({}, emp);
   }
+
+  onDelete(id: number) {
+    if (confirm('Are you sure to delete this record?')) {
+      this.service.deleteEmployee(id).subscribe(res => {
+        this.service.refreshList();
+        this.toastr.warning('Deleted successfully', 'EMP. Register');
+      });
+    }
+  }
+
 }
