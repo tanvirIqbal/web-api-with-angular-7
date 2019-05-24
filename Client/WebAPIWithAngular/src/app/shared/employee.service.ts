@@ -21,4 +21,8 @@ export class EmployeeService {
     this.http.get(this.rootURL + '/Employee')
     .toPromise().then(res => this.list = res as Employee[]);
   }
+
+  putEmployee(formData: Employee) {
+    return this.http.put(this.rootURL + '/Employee/' + formData.EmployeeID, formData);
+   }
 }
