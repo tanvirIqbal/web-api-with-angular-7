@@ -28,3 +28,7 @@ This is a simple Employee Registration project with asp.net web api and angular 
 * add reference ```"node_modules/ngx-toastr/toastr.css"``` to ```angular.json``` in ```styles``` array.
 * now you can use ```ngx-toastr```
 * <https://www.npmjs.com/package/ngx-toastr>
+
+## Final Output
+
+![alt text](https://github.com/tanvirIqbal/web-api-with-angular-7/blob/master/Emp.PNG "Final Output")
